@@ -1,15 +1,16 @@
 package com.billFarber.batch.processor;
 
 import com.billFarber.model.RecordSO;
+import com.marklogic.client.document.DocumentWriteOperation;
+import com.marklogic.client.io.DocumentMetadataHandle;
+import com.marklogic.client.io.StringHandle;
+import com.marklogic.client.io.marker.AbstractWriteHandle;
+import com.marklogic.client.io.marker.DocumentMetadataWriteHandle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
-import com.marklogic.client.document.DocumentWriteOperation;
-import com.marklogic.client.io.StringHandle;
+
 import java.util.UUID;
-import com.marklogic.client.io.marker.AbstractWriteHandle;
-import com.marklogic.client.io.marker.DocumentMetadataWriteHandle;
-import com.marklogic.client.io.DocumentMetadataHandle;
 
 public class MysqlToMarklogicProcessor implements ItemProcessor<RecordSO, DocumentWriteOperation> {
 
@@ -22,7 +23,7 @@ public class MysqlToMarklogicProcessor implements ItemProcessor<RecordSO, Docume
     }
 
     @Override
-    public DocumentWriteOperation process(RecordSO item) throws Exception {
+    public DocumentWriteOperation process(RecordSO item) {
         DocumentWriteOperation dwo = new DocumentWriteOperation() {
 
             @Override
