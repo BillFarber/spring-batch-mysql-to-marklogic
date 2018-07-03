@@ -1,3 +1,5 @@
+package com.billFarber.batch;
+
 import com.billFarber.batch.listener.MysqlToMarkLogicJobCompletionNotificationListener;
 import com.billFarber.batch.processor.MysqlToMarklogicProcessor;
 import com.billFarber.model.RecordSO;
@@ -46,7 +48,7 @@ import java.sql.ResultSet;
 @PropertySource("classpath:job.properties")
 public class MySqlToMarkLogicJobConfig {
 
-    protected final Logger logger = LoggerFactory.getLogger(getClass());
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     // This is the bean label for the name of your Job.  Pass this label into the job_id parameter
     // when using the CommandLineJobRunner

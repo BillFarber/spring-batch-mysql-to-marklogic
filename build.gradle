@@ -1,4 +1,4 @@
-group 'com.barley.batch'
+group 'com.billFarber.batch'
 version '1.0.0'
 
 apply plugin: 'application'
@@ -33,7 +33,6 @@ dependencies {
         exclude group: "org.slf4j", module: "log4j-over-slf4j"
         exclude group: "ch.qos.logback", module: "logback-classic"
     }
-    //compile('org.springframework.boot:spring-boot-starter-jdbc')
     compile('mysql:mysql-connector-java:5.1.38')
 
     compile 'com.google.guava:guava:22.0'
@@ -45,7 +44,6 @@ dependencies {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
 }
-//mainClassName = 'com.billFarber.batch.Application'
 
 task runMySqlToMarkLogicJob(type: JavaExec) {
     main = 'com.marklogic.spring.batch.core.launch.support.CommandLineJobRunner'
